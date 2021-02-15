@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Simple Dark Mode</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="font-awesome/css/all.css" />
+        <link rel="icon" type="image/x-icon" href="favicon.png" />
+    </head>
+    <body>
+        <header>
+            <div class="flex-container">
+                <nav>
+                    <ul>
+                        <li><a href="#">Your Name</a></li>
+                    </ul>
+                </nav>
+                <div class="toggle-switch">
+                    <span class="light">Light</span>
+                    <label class="switch">
+                        <input type="checkbox" onclick="darkMode()" />
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="dark">Dark</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="intro">
+                <aside>
+                    <h1>Hello! I'm Your Name.</h1>
+                    <h3>Web Dev | Photographer | Author</h3>
+                </aside>
+                <aside class="profile">
+                    <img src="images/profile-avatar.jpg" alt="profile" />
+                </aside>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/tisnarudi"><i class="icon fab fa-github fa-2x"></i></a>
+                <a href="https://instagram.com/bandunglokalbisnis"><i class="icon fab fa-instagram fa-2x"></i></a>
+                <a href="mailto:bandunglokalbisnis@gmail.com"><i class="icon fas fa-envelope fa-2x"></i></a>
+            </p>
+        </footer>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,478 @@
+/***********************************************************
+Style for simple dark mode
+************************************************************/
+
+:root {
+    /* Light mode */
+    --light-text: #121212;
+    --light-background: #f3f3f3;
+    --light-hyperlink: #9898fb;
+    --light-hover: #9898FB;
+    --light-icon-color: #121212;
+    --light-icon-hover-color: #121212;
+    --light-icon-hover-background: #dddddd;
+    /* Dark mode */
+    --dark-text: #e4e4e4;
+    --dark-background: #444444;
+    --dark-hyperlink: #e39777;
+    --dark-hover: #98FB98;
+    --dark-image: grayscale(30%);
+    --dark-icon-color: #98FB98;
+    --dark-icon-hover-color: #98FB98;
+    --dark-icon-hover-background: #555555;
+}
+
+
+/***********************************************************
+CSS RESET
+************************************************************/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*************************************************
+Default/Light Mode
+**************************************************/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.25em;
+    color: var(--light-text);
+    line-height: 0;
+    background-color: var(--light-background);
+    min-height: 100vh;
+}
+
+
+/*************************************************
+Dark Mode
+**************************************************/
+
+.dark-mode {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+}
+
+.dark-mode a {
+    color: var(--dark-hyperlink);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.dark-mode ul li a:hover {
+    color: var(--dark-hyperlink);
+}
+
+.dark-mode .icon {
+    color: var(--dark-icon-color);
+    padding: 12px;
+    border-radius: 50%;
+}
+
+.dark-mode .icon:hover {
+    cursor: pointer;
+    color: var(--dark-icon-hover-color);
+    background-color: var(--dark-icon-hover-background);
+}
+
+.dark-mode img {
+    filter: var(--dark-image);
+}
+
+
+/* End Dark Mode */
+
+
+/************************************
+General Style
+*************************************/
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.3em;
+    margin: 1em 0;
+    line-height: 1.6;
+}
+
+h4 {
+    font-size: 1.025em;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+p {
+    margin: 1em 0;
+}
+
+ol li,
+ul li {
+    padding: 0.2rem 0;
+    margin: .5rem 2rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/************************************
+HEADER SECTION
+*************************************/
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    align-self: center;
+    font-size: 1.25em;
+    text-align: center;
+    margin-bottom: 1.5em;
+    margin-top: 1em;
+    padding: .4em 0;
+}
+
+nav ul li {
+    display: inline;
+    padding: 0 .5em 0 .5em;
+}
+
+nav ul li a {
+    color: #9898fb;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav ul li a:hover {
+    color: #9898FB;
+}
+
+.toggle-switch {
+    margin: 0 auto;
+}
+
+
+/************************************
+Toggle Switch
+*************************************/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 22px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+
+/* Hide checkbox input */
+
+.switch input {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ddd;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #98FB98;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    background-color: #121212;
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 22px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* Text Light */
+
+.light {
+    font-size: 16px;
+    margin-right: 8px;
+    line-height: 1.4
+}
+
+
+/* Text Dark */
+
+.dark {
+    font-size: 16px;
+    margin-left: 8px;
+    line-height: 1.4
+}
+
+
+/* End Toggle Switch */
+
+
+/* MAIN */
+
+main {
+    width: 100%;
+    margin-top: 3em;
+    line-height: 1.6;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+aside {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.centered {
+    text-align: center;
+    padding: 0 2em;
+}
+
+.profile {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+    flex-shrink: 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    margin-top: 3em;
+    text-align: center;
+}
+
+.icon {
+    color: var(--light-icon-color);
+    padding: 12px;
+    border-radius: 50%;
+}
+
+.icon:hover {
+    cursor: pointer;
+    color: var(--light-icon-hover-color);
+    background-color: var(--light-icon-hover-background);
+}
+
+
+/************************************
+MOBILE FIRST MEDIA QUERY
+*************************************/
+
+@media all and (min-width:768px) {
+    .flex-container {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+    }
+    nav {
+        align-self: center;
+        margin: 0 0.8em 0 0;
+    }
+    .toggle-switch {
+        margin-right: 1em;
+    }
+    main {
+        width: 100%;
+        margin-top: 5em;
+        line-height: 1.6;
+    }
+    .intro {
+        flex-direction: row-reverse;
+        max-width: 35em;
+        margin: 0 auto;
+    }
+    aside {
+        margin: 0;
+        flex-direction: row;
+        text-align: center;
+    }
+    .profile {
+        margin: 1em;
+        width: 240px;
+        height: 240px;
+    }
+}
